@@ -1,4 +1,5 @@
-import 'package:bottom_bar/placeholder_widget.dart';
+import 'package:ounity/placeholder_widget.dart';
+import 'package:ounity/status.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -22,7 +23,7 @@ class _Page {
 }
 
 List<_Page> _allPages = <_Page>[
-  _Page(widget: PlaceholderWidget("Screen 1")),
+  _Page(widget: Status()),
   _Page(widget: PlaceholderWidget("Screen 2")),
   _Page(widget: PlaceholderWidget("Screen 3")),
 ];
@@ -56,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage>
       appBar: AppBar(title: const Text('Home')),
       floatingActionButton: FloatingActionButton.extended(
         elevation: 4.0,
-        icon: const Icon(Icons.add),
-        label: const Text('Add a task'),
+        icon: const Icon(Icons.touch_app),
+        label: const Text('Refresh'),
         onPressed: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -100,24 +101,24 @@ class _MyHomePageState extends State<MyHomePage>
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               new ListTile(
-                leading: new Icon(Icons.music_note),
-                title: new Text('Screen 1'),
+                leading: new Icon(Icons.home),
+                title: new Text('Status'),
                 onTap: () {
                   _controller.animateTo(0);
                   Navigator.pop(context);
                 },
               ),
               new ListTile(
-                leading: new Icon(Icons.photo_album),
-                title: new Text('Screen 2'),
+                leading: new Icon(Icons.alarm),
+                title: new Text('Notifications'),
                 onTap: () {
                   _controller.animateTo(1);
                   Navigator.pop(context);
                 },
               ),
               new ListTile(
-                leading: new Icon(Icons.videocam),
-                title: new Text('Screen 3'),
+                leading: new Icon(Icons.adjust),
+                title: new Text('Utilities'),
                 onTap: () {
                   _controller.animateTo(2);
                   Navigator.pop(context);
